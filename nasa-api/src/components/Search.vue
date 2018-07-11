@@ -1,11 +1,14 @@
 <template>
   <div class="search">
+	<p>Simply start typing your search term to display the images.</p>
     <form v-on:keyup="getResult(query)">
 		<label>Search: 
-			<input type="text" placeholder="Type in Your Search" v-model="query" v-on:keydown.enter.prevent=''>
+			<input type="text" v-model="query" v-on:keydown.enter.prevent=''>
 		</label>
 	</form>
-	<app-results :resultsObj="queryResults"></app-results>
+	<div>
+		<app-results :resultsObj="queryResults"></app-results>
+	</div>
   </div>
 </template>
 
